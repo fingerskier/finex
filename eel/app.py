@@ -3,14 +3,22 @@ import os
 from backend.data import loader, processor
 from backend.analysis import stats, visualize
 
+# Debug: Print current working directory and check if index.html exists
+print("Current working directory:", os.getcwd())
+index_path = os.path.join('frontend', 'finex', 'index.html')
+print("Looking for index.html at:", os.path.abspath(index_path))
+print("File exists:", os.path.exists(index_path))
+
+# Initialize Eel
+eel.init('frontend/finex')
 
 # Config
 DEV_MODE = os.getenv('DEV', 'false').lower() == 'true'
 
 if DEV_MODE:
-    eel.init('frontend')  # serve Vite source directly
+    eel.init('frontend/finex')  # serve Vite source directly
 else:
-    eel.init('dist')      # serve built Vite output
+    eel.init('frontend/dist')      # serve built Vite output
 
 
 @eel.expose

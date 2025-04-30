@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>NeutralinoJs sample app</title>
+    <link rel="stylesheet" href="/styles.css">
+    <script src="/js/neutralino.js" defer></script>
+    <script src="/js/main.js" type="module" defer></script>
+  </head>
+  <body>
+    <div id="neutralinoapp">
+      <h1>finex</h1>
+      
+      <form id="inputter">
+        <input type="text" id="value" placeholder="Enter a value">
+
+        <label>
+          <input type="radio" name="type" value="asset">
+          <span>Asset</span>
+        </label>
+
+        <label>
+          <input type="radio" name="type" value="liability">
+          <span>Liability</span>
+        </label>
+
+        <button id="button">Submit</button>
+      </form>
+
+      <div id="net-worth"></div>
+
+      <div id="info"></div>
+      <br/>
+    </div>
+  </body>
+</html>
